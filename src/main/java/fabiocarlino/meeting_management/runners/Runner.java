@@ -71,9 +71,9 @@ public class Runner implements CommandLineRunner {
         Booking prenotazione2 = new Booking(utente2, postazione2, LocalDate.parse("2024-03-17"));
         Booking prenotazione3 = new Booking(utente3, postazione3, LocalDate.parse("2024-03-18"));
 
-        this.bookingService.save(postazione1);
-        this.bookingService.save(postazione2);
-        this.bookingService.save(postazione3);
+        this.bookingService.save(prenotazione1);
+        this.bookingService.save(prenotazione2);
+        this.bookingService.save(prenotazione3);
 
     }
 }
