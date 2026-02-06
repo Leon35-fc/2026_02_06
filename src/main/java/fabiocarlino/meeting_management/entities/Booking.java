@@ -25,7 +25,9 @@ public class Booking {
     private Emplacement emplacement;
 
     public Booking(User user, Emplacement emplacement, LocalDate date) {
-
+        this.user = user;
+        this.emplacement = emplacement;
+        this.date = date;
     }
 
     public UUID getId() {

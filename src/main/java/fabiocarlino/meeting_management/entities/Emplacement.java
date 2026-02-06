@@ -16,14 +16,21 @@ public class Emplacement {
 
     @Column
     @Enumerated(EnumType.STRING)
-    private EmplacementType emplacementTypeType;
+    private EmplacementType emplacementType;
 
     @Column
     private int maxSeat;
 
     @ManyToOne
-    @JoinColumn(name = "building_id")
+    @JoinColumn(name = "id_building")
     private Building building;
+
+    public Emplacement(String description, EmplacementType emplacementType, int maxSeat, Building building) {
+        this.description = description;
+        this.emplacementType = emplacementType;
+        this.maxSeat = maxSeat;
+        this.building = building;
+    }
 
     public UUID getId() {
         return id;
@@ -37,12 +44,12 @@ public class Emplacement {
         this.description = description;
     }
 
-    public EmplacementType getEmplacementTypeType() {
-        return emplacementTypeType;
+    public EmplacementType getEmplacementType() {
+        return emplacementType;
     }
 
-    public void setEmplacementTypeType(EmplacementType emplacementTypeType) {
-        this.emplacementTypeType = emplacementTypeType;
+    public void setEmplacementType(EmplacementType emplacementType) {
+        this.emplacementType = emplacementType;
     }
 
     public int getMaxSeat() {
@@ -66,7 +73,7 @@ public class Emplacement {
         return "Emplacement{" +
                 "id=" + id +
                 ", description='" + description + '\'' +
-                ", emplacementTypeType=" + emplacementTypeType +
+                ", emplacementTypeType=" + emplacementType +
                 ", maxSeat=" + maxSeat +
                 ", building=" + building +
                 '}';

@@ -21,6 +21,9 @@ public class Building {
     @Column
     private String city;
 
+    public Building() {
+    }
+
     public Building(String name, String address, String city) {
         this.name = name;
         this.address = address;
