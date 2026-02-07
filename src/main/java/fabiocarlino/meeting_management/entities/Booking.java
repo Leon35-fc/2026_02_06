@@ -24,6 +24,11 @@ public class Booking {
     @JoinColumn(name = "emplacement_id")
     private Emplacement emplacement;
 
+    public Booking() {
+    }
+
+    ;
+
     public Booking(User user, Emplacement emplacement, LocalDate date) {
         this.user = user;
         this.emplacement = emplacement;

@@ -25,6 +25,11 @@ public class Emplacement {
     @JoinColumn(name = "id_building")
     private Building building;
 
+    public Emplacement() {
+    }
+
+    ;
+
     public Emplacement(String description, EmplacementType emplacementType, int maxSeat, Building building) {
         this.description = description;
         this.emplacementType = emplacementType;

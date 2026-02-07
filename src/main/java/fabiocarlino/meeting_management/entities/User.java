@@ -21,6 +21,11 @@ public class User {
     @Column(nullable = false)
     private String email;
 
+    public User() {
+    }
+
+    ;
+
     public User(String username, String firstAndLastName, String email) {
         this.username = username;
         this.firstAndLastName = firstAndLastName;
