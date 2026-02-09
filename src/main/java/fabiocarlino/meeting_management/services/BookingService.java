@@ -23,6 +23,10 @@ public class BookingService {
     }
 
     public Booking save(Booking newBooking) {
+        if (bookingRepo.existsByUtenteIdAndData(newBooking.getUser().getId(), newBooking.getDate())) {
+            throw new RuntimeException("L'utente ha già una prenotazione per questa data");
+        }
         return this.bookingRepo.save(newBooking);
     }
+
 }

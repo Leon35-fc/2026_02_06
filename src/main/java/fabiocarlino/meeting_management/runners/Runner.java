@@ -1,12 +1,14 @@
 package fabiocarlino.meeting_management.runners;
 
-import fabiocarlino.meeting_management.entities.User;
+import fabiocarlino.meeting_management.entities.*;
 import fabiocarlino.meeting_management.services.BookingService;
 import fabiocarlino.meeting_management.services.BuildingService;
 import fabiocarlino.meeting_management.services.EmplacementService;
 import fabiocarlino.meeting_management.services.UserService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
+
+import java.time.LocalDate;
 
 @Component
 public class Runner implements CommandLineRunner {
@@ -36,6 +38,8 @@ public class Runner implements CommandLineRunner {
 
 
         this.userService.save(utente1);
+        Booking prenotazione1 = new Booking(utente1, new Emplacement("Sala riunioni principale", EmplacementType.SALA_RIUNIONI, 10, new Building("Edificio principale", "Via Roma 1", "Roma")), LocalDate.parse("2024-03-16"));
+        this.bookingService.save(prenotazione1);
 //
 //        Building edificio1 = new Building("Edificio 3", "Centro Direzionale", "Napoli");
 //        this.buildingService.save(edificio1);
