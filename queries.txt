@@ -1,0 +1,20 @@
+boolean existsByUtenteAndData(Utente utente, LocalDate data);
+
+
+@Query("SELECT r FROM Reservation r WHERE r.user.userId=:userId AND r.reservationDate=:reservationDate")
+List<Reservation> filterReservationByUserIdAndReservationDate(long userId, LocalDate reservationDate);
+
+DI RICCARDO
+findByDataPrenotazioneAndPostazione(LocalDate dataPrenotazione, Postazione postazione);
+if(prenotazioneRepository.
+	findByDataPrenotazioneAndPostazione(newPrenotazione.getDataPrenotazione(),newPrenotazione.getPostazione()) != null) throw new ValidationException("Impossibile prenotare, il Posto è già occupato");
+
+CERCA PER POSTAZIONE E CITTA
+DI GIADA
+@Query("SELECT p FROM Postazione p WHERE LOWER(p.edificio.citta) = LOWER(:citta) AND p.tipoPostazione = :tipoPostazione")
+List<Postazione> findByCittaAndTipoPostazione(String citta, TipoPostazione tipoPostazione);
+
+Di NADER
+public List<Postazione> getByTipoAndCitta(PostazioneTipo tipo, String citta) {
+return por.findByTipoAndEdificioCitta(tipo, citta);
+}
